@@ -2,6 +2,6 @@
 
 exec ${buildout:directory}/bin/node \
          ${buildout:directory}/src/node/css_watch.js \
-         --file ${buildout:directory}/src/themes/css/main.less \
+         --file ${buildout:directory}/src/themes/zt/css/main.less \
          --cmd ${buildout:directory}/bin/css-build
          # > ${buildout:directory}/var/css_watcher.log 2>&1
