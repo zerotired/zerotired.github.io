@@ -1,0 +1,13 @@
+# -*- mode: perl -*-
+
+server {
+    listen       ${config:nginx-public-port};
+    server_name  localhost;
+
+    include conf.d/common.include;
+
+    # Web Application URL
+    location ~ ^/(.*) {
+        root ${buildout:directory}/output;
+    }
+}

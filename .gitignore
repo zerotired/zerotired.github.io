@@ -3,6 +3,7 @@
 /parts
 /output
 /*.pid
+/etc
 
 *.swp
 *.py[co]
