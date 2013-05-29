@@ -34,8 +34,11 @@
 
 <body id="index" class="home">
         <header id="banner" class="body">
+            <div class="container-fluid">
                 <h1><a href="{{ SITEURL }}">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></h1>
+            </div>
         </header><!-- /#banner -->
+
         <nav id="menu"><ul>
         {% for title, link in MENUITEMS %}
             <li><a href="{{ link }}">{{ title }}</a></li>
@@ -52,12 +55,18 @@
           {% endif %}
         {% endif %}
         </ul></nav><!-- /#menu -->
-        {% block content %}
-        {% endblock %}
+
+        <div class="container-fluid">
+            {% block content %}
+            {% endblock %}
+        </div>
+
         <footer id="contentinfo" class="body">
+            <div class="container-fluid">
                 <address id="about" class="vcard body">
                 Proudly powered by <a href="http://getpelican.com/" target="_blank">Pelican</a>.
                 </address><!-- /#about -->
+            </div>
         </footer><!-- /#contentinfo -->
 
         <script>
