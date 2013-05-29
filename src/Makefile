@@ -1,13 +1,13 @@
-BASEDIR="$(CURDIR)/.."
+BASEDIR=$(CURDIR)/..
 
 PY="$(BASEDIR)/bin/python-zerotired"
-PELICAN=pelican
+PELICAN="$(BASEDIR)/bin/pelican"
 PELICANOPTS=
 
-INPUTDIR=$(BASEDIR)/src/content
-OUTPUTDIR=$(BASEDIR)/output
-CONFFILE=$(BASEDIR)/src/pelicanconf.py
-PUBLISHCONF=$(BASEDIR)/src/publishconf.py
+INPUTDIR="$(BASEDIR)/src/content"
+OUTPUTDIR="$(BASEDIR)/output"
+CONFFILE="$(BASEDIR)/src/pelicanconf.py"
+PUBLISHCONF="$(BASEDIR)/src/publishconf.py"
 
 FTP_HOST=localhost
 FTP_USER=anonymous
@@ -31,7 +31,7 @@ help:
 	@echo '   make regenerate                  regenerate files upon modification '
 	@echo '   make publish                     generate using production settings '
 	@echo '   make serve                       serve site at http://localhost:8000'
-	@echo '   make devserver                   start/restart develop_server.sh    '
+	@echo '   make devserver                   start/restart develop_server    '
 	@echo '   make stopserver                  stop local server                  '
 	@echo '   ssh_upload                       upload the web site via SSH        '
 	@echo '   rsync_upload                     upload the web site via rsync+ssh  '
@@ -57,11 +57,11 @@ serve:
 	cd $(OUTPUTDIR) && $(PY) -m pelican.server
 
 devserver:
-	$(BASEDIR)/develop_server.sh restart
+	$(BASEDIR)/bin/develop_server restart
 
 stopserver:
-	kill -9 `cat pelican.pid`
-	kill -9 `cat srv.pid`
+	kill -9 `cat "$(BASEDIR)/pelican.pid"`
+	kill -9 `cat "$(BASEDIR)/srv.pid"`
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
 publish:

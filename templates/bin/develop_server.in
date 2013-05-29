@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-BASEDIR="$(pwd)/$(dirname $0)/.."
+BASEDIR="${buildout:directory}"
 
 ##
 # This section should match your Makefile
 ##
-PY="${BASEDIR}/bin/python-zerotired"
-PELICAN="${BASEDIR}/bin/pelican"
+PY="$BASEDIR/bin/python-zerotired"
+PELICAN="$BASEDIR/bin/pelican"
 PELICANOPTS=
 
 INPUTDIR="$BASEDIR/src/content"
