@@ -694,17 +694,23 @@ a {
 a:hover {
   text-decoration: underline;
 }
+html,
+body {
+  height: 100%;
+}
 body {
   margin-top: 0;
   margin-bottom: 0;
   font-family: 'Karla', Helvetica, Arial, serif;
   font-weight: 200;
   background-color: #AFAFAF;
-  min-height: 100%;
 }
 .container-fluid {
   background-color: #ffffff;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+}
+.fill {
+  min-height: 100%;
 }
