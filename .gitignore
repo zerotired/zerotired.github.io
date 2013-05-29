@@ -1,8 +1,10 @@
 /build/.installed.cfg
 /build/bin
 /build/parts
-/build/*.pid
+/build/var/*
 /build/etc
+/build/node_modules
+/.idea
 
 *.swp
 *.py[co]

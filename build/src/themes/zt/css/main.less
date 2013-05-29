@@ -1,0 +1,59 @@
+@import "../../../../parts/twitter_bootstrap/less/variables.less";
+@import "bootstrap/variables.less";
+@import "fonts.less";
+@import "../../../../parts/twitter_bootstrap/less/mixins.less";
+
+@import "../../../../parts/twitter_bootstrap/less/layouts.less";
+@import "../../../../parts/twitter_bootstrap/less/grid.less";
+@import "../../../../parts/twitter_bootstrap/less/code.less";
+
+// created with::
+//
+//  bin/pygmentize -S default -f html > src/themes/zt/css/pygmentize/html.less
+//
+@import "pygmentize/html.less";
+
+
+h1 {
+  font-family: 'Advent Pro', Helvetica, Arial, serif;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: 'Advent Pro', Helvetica, Arial, serif;
+  font-weight: 600;
+}
+
+h3 {
+  font-family: 'Advent Pro', Helvetica, Arial, serif;
+  font-weight: 600;
+}
+
+h4 {
+  font-family: 'Advent Pro', Helvetica, Arial, serif;
+  font-weight: 600;
+}
+
+a {
+  color: @blue;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: 'Karla', Helvetica, Arial, serif;
+  font-weight: 200;
+  background-color: #AFAFAF;
+  min-height: 100%;
+}
+
+.container-fluid {
+  background-color: @white;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
