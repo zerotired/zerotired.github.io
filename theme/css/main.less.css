@@ -687,6 +687,12 @@ h4 {
   font-family: 'Advent Pro', Helvetica, Arial, serif;
   font-weight: 600;
 }
+h5 {
+  font-family: 'Advent Pro', Helvetica, Arial, serif;
+  font-weight: 600;
+  font-size: 15px;
+  font-style: italic;
+}
 a {
   color: #049cdb;
   text-decoration: none;
@@ -716,4 +722,12 @@ body {
 }
 .fill {
   min-height: 100%;
+}
+blockquote {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #eeeeee;
+  padding: 4px 10px 4px 10px;
+  border-left: 8px solid #ffc40d;
 }
