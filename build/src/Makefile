@@ -5,7 +5,7 @@ PELICAN="$(BASEDIR)/bin/pelican"
 PELICANOPTS=
 
 INPUTDIR="$(BASEDIR)/src/content"
-OUTPUTDIR="$(BASEDIR)/output"
+OUTPUTDIR="$(BASEDIR)/.."
 CONFFILE="$(BASEDIR)/src/pelicanconf.py"
 PUBLISHCONF="$(BASEDIR)/src/publishconf.py"
 
