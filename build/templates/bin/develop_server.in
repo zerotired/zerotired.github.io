@@ -59,6 +59,7 @@ function shut_down(){
   else
     echo "Pelican PIDFile not found"
   fi
+  "$BASEDIR/bin/supervisorctl" shutdown
 }
 
 function start_up(){
@@ -88,6 +89,8 @@ function start_up(){
     return 1
   fi
   echo 'Pelican and pelican.server processes now running in background.'
+  "$BASEDIR/bin/supervisord" 
+  "$BASEDIR/bin/supervisorctl" status  
 }
 
 ###
