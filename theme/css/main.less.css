@@ -687,6 +687,13 @@ h4 {
   font-family: 'Advent Pro', Helvetica, Arial, serif;
   font-weight: 600;
 }
+a {
+  color: #049cdb;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 body {
   margin-top: 0;
   margin-bottom: 0;
