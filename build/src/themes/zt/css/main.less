@@ -34,6 +34,13 @@ h4 {
   font-weight: 600;
 }
 
+h5 {
+  font-family: 'Advent Pro', Helvetica, Arial, serif;
+  font-weight: 600;
+  font-size: 15px;
+  font-style: italic;
+}
+
 a {
   color: @blue;
   text-decoration: none;
@@ -52,7 +59,7 @@ body {
   margin-bottom: 0;
   font-family: 'Karla', Helvetica, Arial, serif;
   font-weight: 200;
-  background-color: #AFAFAF;
+  background-color: @grayLight;
 }
 
 .container-fluid {
@@ -60,8 +67,33 @@ body {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  .box-shadow(0px 0px 6px 0px rgba(0,0,0, 0.75));
 }
 
 .fill {
     min-height: 100%;
+}
+
+
+// page list
+// =========
+#post-list {
+  padding-left: 30px;
+}
+#post-list > li {
+  list-style-type: decimal-leading-zero;
+}
+
+p.paginator {
+  text-align: center;
+}
+
+// page detail
+// ===========
+
+blockquote {
+  .border-radius(@baseBorderRadius);
+  background-color: @grayLighter;
+  padding: 4px 10px 4px 10px;
+  border-left: 8px solid @yellow;
 }
