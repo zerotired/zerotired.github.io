@@ -1,9 +1,8 @@
-/.installed.cfg
-/bin
-/parts
-/output
-/*.pid
-/etc
+/build/.installed.cfg
+/build/bin
+/build/parts
+/build/*.pid
+/build/etc
 
 *.swp
 *.py[co]
