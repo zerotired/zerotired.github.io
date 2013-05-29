@@ -62,6 +62,13 @@ function shut_down(){
 }
 
 function start_up(){
+  if [ -f $PELICAN_PID ] ; then
+    echo "Pelican is already running."
+    return 2
+  elif [ -f $SRV_PID ] ; then
+    echo "pelican.server is already running."
+    return 2
+  fi
   echo "Starting up Pelican and pelican.server"
   shift
   $PELICAN --debug --autoreload -r $INPUTDIR -o $OUTPUTDIR -s $CONFFILE $PELICANOPTS &
@@ -93,8 +100,12 @@ elif [[ $1 == "restart" ]]; then
   shut_down
   start_up
 elif [[ $1 == "start" ]]; then
-  if ! start_up; then
+  start_up
+  r=$?
+  if [[ 1 -eq $r ]]; then
     shut_down
+  elif [[ 2 -eq $r ]]; then
+    exit 1
   fi
 else
   usage
