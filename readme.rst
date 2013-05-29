@@ -10,8 +10,8 @@ Setup
 ::
 
     cd build
-	python bootstrap.py
-	bin/buildout -vvN
+    python bootstrap.py
+    bin/buildout -vvN
 
 Development
 -----------
