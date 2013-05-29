@@ -1,6 +1,8 @@
 /.installed.cfg
 /bin
 /parts
+/output
+/*.pid
 
 *.swp
 *.py[co]
