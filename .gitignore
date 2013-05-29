@@ -3,6 +3,7 @@
 /build/parts
 /build/*.pid
 /build/etc
+/.idea
 
 *.swp
 *.py[co]
