@@ -60,8 +60,8 @@ devserver:
 	$(BASEDIR)/bin/develop_server restart
 
 stopserver:
-	kill -9 `cat "$(BASEDIR)/pelican.pid"`
-	kill -9 `cat "$(BASEDIR)/srv.pid"`
+	kill -9 `cat "$(BASEDIR)/var/pelican.pid"`
+	kill -9 `cat "$(BASEDIR)/var/srv.pid"`
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
 publish:

@@ -1,7 +1,7 @@
 /build/.installed.cfg
 /build/bin
 /build/parts
-/build/*.pid
+/build/var/*.pid
 /build/etc
 /.idea
 
