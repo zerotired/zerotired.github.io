@@ -1,0 +1,15 @@
+/.installed.cfg
+/bin
+/parts
+/output
+/*.pid
+/etc
+
+*.swp
+*.py[co]
+*.egg-info
+*.egg-link
+.hyde_deps
+.DS_Store
+*.sublime-project
+*.sublime-workspace

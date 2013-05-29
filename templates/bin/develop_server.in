@@ -1,0 +1,112 @@
+#!/usr/bin/env bash
+
+BASEDIR="${buildout:directory}"
+
+##
+# This section should match your Makefile
+##
+PY="$BASEDIR/bin/python-zerotired"
+PELICAN="$BASEDIR/bin/pelican"
+PELICANOPTS=
+
+INPUTDIR="$BASEDIR/src/content"
+OUTPUTDIR="$BASEDIR/output"
+CONFFILE="$BASEDIR/src/pelicanconf.py"
+
+###
+# Don't change stuff below here unless you are sure
+###
+
+SRV_PID="$BASEDIR/srv.pid"
+PELICAN_PID="$BASEDIR/pelican.pid"
+
+function usage(){
+  echo "usage: $0 (stop) (start) (restart)"
+  echo "This starts pelican in debug and reload mode and then launches"
+  echo "A pelican.server to help site development. It doesn't read"
+  echo "your pelican options so you edit any paths in your Makefile"
+  echo "you will need to edit it as well"
+  exit 3
+}
+
+function alive() {
+  kill -0 $1 >/dev/null 2>&1
+}
+
+function shut_down(){
+  PID=$(cat $SRV_PID)
+  if [[ $? -eq 0 ]]; then
+    if alive $PID; then
+      echo "Killing pelican.server"
+      kill $PID
+    else
+      echo "Stale PID, deleting"
+    fi
+    rm $SRV_PID
+  else
+    echo "pelican.server PIDFile not found"
+  fi
+
+  PID=$(cat $PELICAN_PID)
+  if [[ $? -eq 0 ]]; then
+    if alive $PID; then
+      echo "Killing Pelican"
+      kill $PID
+    else
+      echo "Stale PID, deleting"
+    fi
+    rm $PELICAN_PID
+  else
+    echo "Pelican PIDFile not found"
+  fi
+}
+
+function start_up(){
+  if [ -f $PELICAN_PID ] ; then
+    echo "Pelican is already running."
+    return 2
+  elif [ -f $SRV_PID ] ; then
+    echo "pelican.server is already running."
+    return 2
+  fi
+  echo "Starting up Pelican and pelican.server"
+  shift
+  $PELICAN --debug --autoreload -r $INPUTDIR -o $OUTPUTDIR -s $CONFFILE $PELICANOPTS &
+  pelican_pid=$!
+  echo $pelican_pid > $PELICAN_PID
+  cd $OUTPUTDIR
+  $PY -m pelican.server &
+  srv_pid=$!
+  echo $srv_pid > $SRV_PID
+  cd $BASEDIR
+  sleep 1
+  if ! alive $pelican_pid ; then
+    echo "Pelican didn't start. Is the pelican package installed?"
+    return 1
+  elif ! alive $srv_pid ; then
+    echo "pelican.server didn't start. Is the pelican package installed?"
+    return 1
+  fi
+  echo 'Pelican and pelican.server processes now running in background.'
+}
+
+###
+#  MAIN
+###
+[[ $# -ne 1 ]] && usage
+if [[ $1 == "stop" ]]; then
+  shut_down
+elif [[ $1 == "restart" ]]; then
+  shut_down
+  start_up
+elif [[ $1 == "start" ]]; then
+  start_up
+  r=$?
+  if [[ 1 -eq $r ]]; then
+    shut_down
+  elif [[ 2 -eq $r ]]; then
+    exit 1
+  fi
+else
+  usage
+fi
