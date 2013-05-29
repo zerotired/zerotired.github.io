@@ -723,6 +723,15 @@ body {
 .fill {
   min-height: 100%;
 }
+#post-list {
+  padding-left: 30px;
+}
+#post-list > li {
+  list-style-type: decimal-leading-zero;
+}
+p.paginator {
+  text-align: center;
+}
 blockquote {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
