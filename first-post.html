@@ -34,7 +34,36 @@
       </footer><!-- /.post-info -->
   <div class="entry-content">
     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+<div class="highlight"><pre><span class="nt">&lt;indented</span> <span class="na">code</span> <span class="na">block</span> <span class="na">goes</span> <span class="na">here</span><span class="nt">&gt;</span>
+
+{% if DISPLAY_PAGES_ON_MENU %}
+  {% for p in PAGES %}
+    <span class="nt">&lt;li</span><span class="err">{%</span> <span class="na">if</span> <span class="na">p =</span><span class="s">=</span> <span class="na">page</span> <span class="err">%}</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="err">{%</span> <span class="na">endif</span> <span class="err">%}</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ SITEURL }}/{{ p.url }}&quot;</span><span class="nt">&gt;</span>{{ p.title }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  {% endfor %}
+{% else %}
+  {% if DISPLAY_CATEGORIES_ON_MENU %}
+    {% for cat, null in categories %}
+      <span class="nt">&lt;li</span><span class="err">{%</span> <span class="na">if</span> <span class="na">cat =</span><span class="s">=</span> <span class="na">category</span> <span class="err">%}</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="err">{%</span> <span class="na">endif</span> <span class="err">%}</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ SITEURL }}/{{ cat.url }}&quot;</span><span class="nt">&gt;</span>{{ cat }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    {% endfor %}
+  {% endif %}
+{% endif %}
+</pre></div>
 <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+<div class="highlight"><pre><span class="c"># Feed generation is usually not desired when developing</span>
+<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">TRANSLATION_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="c"># Blogroll</span>
+<span class="n">LINKS</span> <span class="o">=</span>  <span class="p">((</span><span class="s">&#39;Pelican&#39;</span><span class="p">,</span> <span class="s">&#39;http://getpelican.com/&#39;</span><span class="p">),</span>
+          <span class="p">(</span><span class="s">&#39;Python.org&#39;</span><span class="p">,</span> <span class="s">&#39;http://python.org/&#39;</span><span class="p">),</span>
+          <span class="p">(</span><span class="s">&#39;Jinja2&#39;</span><span class="p">,</span> <span class="s">&#39;http://jinja.pocoo.org/&#39;</span><span class="p">),</span>
+          <span class="p">(</span><span class="s">&#39;You can modify those links in your config file&#39;</span><span class="p">,</span> <span class="s">&#39;#&#39;</span><span class="p">),)</span>
+
+<span class="c"># Social widget</span>
+<span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">((</span><span class="s">&#39;You can add links in your config file&#39;</span><span class="p">,</span> <span class="s">&#39;#&#39;</span><span class="p">),</span>
+          <span class="p">(</span><span class="s">&#39;Another social link&#39;</span><span class="p">,</span> <span class="s">&#39;#&#39;</span><span class="p">),)</span>
+</pre></div>
 <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
 <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
 <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
