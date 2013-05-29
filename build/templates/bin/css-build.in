@@ -1,6 +1,6 @@
 #!/bin/bash
 
-main_css="${buildout:directory}/src/themes/zt/gen/css/main.less.css"
+main_css="${buildout:directory}/../theme/css/main.less.css"
 
 GROWL=$(which growlnotify)
 CSS_CHANGE=0
@@ -65,6 +65,6 @@ less_comp_force "${buildout:directory}/src/themes/zt/css/main.less" "$main_css"
 
 # expensive actions second
 # css compression
-yui_comp "$main_css" "${buildout:directory}/src/themes/zt/gen/css/m.min.css"
+yui_comp "$main_css" "${buildout:directory}/../theme/css/m.min.css"
 
 [ "$JS_CHANGE" == "1" ] && [ -x "$GROWL" ] && $GROWL -a LessCompiler -t Success -m "CSS/JS compression started (detached)" -w &

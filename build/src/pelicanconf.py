@@ -32,8 +32,5 @@ DEFAULT_PAGINATION = 5
 RELATIVE_URLS = True
 
 THEME = os.path.join(os.path.dirname(__file__), 'themes', 'zt')
-THEME_STATIC_PATHS = [
-    os.path.join(os.path.dirname(__file__), 'themes', 'zt', 'gen')
-]
 CSS_FILE = 'm.min.css'
 # STATIC_PATHS = ['images', ]
