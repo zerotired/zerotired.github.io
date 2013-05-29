@@ -725,6 +725,13 @@ body {
   margin-top: 8px;
   margin-bottom: 8px;
 }
+footer.post-info {
+  display: inline-block;
+  text-align: right;
+  float: right;
+  position: relative;
+  top: -50px;
+}
 #post-list {
   padding-left: 30px;
 }
