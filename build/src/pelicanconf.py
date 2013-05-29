@@ -29,7 +29,7 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 
 THEME = os.path.join(os.path.dirname(__file__), 'themes', 'zt')
 THEME_STATIC_PATHS = [
