@@ -18,6 +18,7 @@ setup (
             ]),
     install_requires = [
             'plac==0.9.1',
+            'pelican>=3.2.1', 
             ],
     zip_safe = False,
     entry_points = {
