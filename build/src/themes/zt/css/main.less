@@ -49,9 +49,10 @@ a:hover {
   text-decoration: underline;
 }
 
-@height: 99.0%;
+@height: 98.9%;
 @max_width: 900px;
 @footer_height: -19px;
+@margin_top_bottom: 8px;
 
 html,
 body {
@@ -71,8 +72,8 @@ body {
 }
 
 .styler {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: @margin_top_bottom;
+  margin-bottom: @margin_top_bottom;
   min-height: @height;
 }
 
@@ -119,16 +120,13 @@ p.paginator {
   text-align: center;
 }
 
-.push {
-  height: @footer_height;
-}
-
 footer#contentinfo {
   height: @footer_height;
   max-width: @max_width;
-  background-color: @green;
+  background-color: @white;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: @margin_top_bottom;
 }
 
 // page detail

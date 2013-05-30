@@ -702,7 +702,7 @@ a:hover {
 }
 html,
 body {
-  height: 99%;
+  height: 98.9%;
 }
 body {
   margin-top: 0;
@@ -714,7 +714,7 @@ body {
 .styler {
   margin-top: 8px;
   margin-bottom: 8px;
-  min-height: 99%;
+  min-height: 98.9%;
 }
 div.wrapper > div.top-push {
   height: 45px;
@@ -753,15 +753,13 @@ h2.entry-title {
 p.paginator {
   text-align: center;
 }
-.push {
-  height: -19px;
-}
 footer#contentinfo {
   height: -19px;
   max-width: 900px;
-  background-color: #46a546;
+  background-color: #ffffff;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 8px;
 }
 blockquote {
   -webkit-border-radius: 2px;
