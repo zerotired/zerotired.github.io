@@ -49,7 +49,10 @@ a:hover {
   text-decoration: underline;
 }
 
-@height: 99.1%;
+@height: 99.0%;
+@max_width: 900px;
+@footer_height: -19px;
+
 html,
 body {
   height: @height;
@@ -64,17 +67,28 @@ body {
 }
 
 .container-fluid {
+
+}
+
+.styler {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  min-height: @height;
+}
+
+
+div.wrapper > div.top-push {
+    height: 45px;
+}
+.wrapper {
+  height: auto !important;
+  margin: 0 auto @footer_height;
+  min-height: 100%;
   background-color: @white;
-  max-width: 900px;
+  max-width: @max_width;
   margin-left: auto;
   margin-right: auto;
   .box-shadow(0px 0px 6px 0px rgba(0,0,0, 0.75));
-}
-
-.fill {
-  min-height: @height;
-  margin-top: 8px;
-  margin-bottom: 8px;
 }
 
 
@@ -88,15 +102,33 @@ footer.post-info {
 
 // page list
 // =========
+h2.entry-title {
+  width: 80%;
+}
 #post-list {
   padding-left: 30px;
 }
 #post-list > li {
   list-style-type: decimal-leading-zero;
 }
+#content {
+  min-height: 75%;
+}
 
 p.paginator {
   text-align: center;
+}
+
+.push {
+  height: @footer_height;
+}
+
+footer#contentinfo {
+  height: @footer_height;
+  max-width: @max_width;
+  background-color: @green;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // page detail
