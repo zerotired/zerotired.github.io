@@ -49,10 +49,11 @@ a:hover {
   text-decoration: underline;
 }
 
-@height: 98.9%;
+
+@height: 100%;
 @max_width: 900px;
-@footer_height: -19px;
-@margin_top_bottom: 8px;
+@footer_height: 25px;
+@margin_top_bottom: 0;
 
 html,
 body {
@@ -67,31 +68,31 @@ body {
   background-color: @grayLight;
 }
 
-.container-fluid {
+div.wrapper > div.top-push {
+    height: 45px;
+}
+.wrapper {
+  // @see: https://gist.github.com/martinbean/1855032
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto (-1 * @footer_height) auto;
+  max-width: @max_width;
 
+  .box-shadow(0px 0px 6px 0px rgba(0,0,0, 0.75));
+}
+
+.push {
+  height: @footer_height;
+  margin: 0;
+  padding: 0;
 }
 
 .styler {
   margin-top: @margin_top_bottom;
   margin-bottom: @margin_top_bottom;
-  min-height: 400px;
-  .box-shadow(0px 0px 6px 0px rgba(0,0,0, 0.75));
+  // min-height: 400px;
   background-color: @white;
-}
-
-
-div.wrapper > div.top-push {
-    height: 45px;
-}
-.wrapper {
-  height: auto !important;
-  margin: 0 auto @footer_height;
-  min-height: 100%;
-
-  max-width: @max_width;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 10px;
 }
 
 
@@ -122,15 +123,15 @@ p.paginator {
   text-align: center;
 }
 
-footer#contentinfo {
+footer {
   height: @footer_height;
   max-width: @max_width;
   background-color: @green;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: @margin_top_bottom;
+  margin-top: @margin_top_bottom;
   position: relative;
-  margin-top: -35px;
 }
 
 // page detail

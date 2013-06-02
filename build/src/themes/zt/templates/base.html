@@ -34,39 +34,42 @@
 
 <body id="index" class="home">
     <div class="wrapper">
-    <div class="container-fluid styler">
-        <header id="banner" class="body">
-                <h1><a href="{{ SITEURL }}">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></h1>
-        </header><!-- /#banner -->
+        <div class="container-fluid styler">
+            <header id="banner" class="body">
+                    <h1><a href="{{ SITEURL }}">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></h1>
+            </header><!-- /#banner -->
 
-        <nav id="menu"><ul>
-        {% for title, link in MENUITEMS %}
-            <li><a href="{{ link }}">{{ title }}</a></li>
-        {% endfor %}
-        {% if DISPLAY_PAGES_ON_MENU %}
-          {% for p in PAGES %}
-            <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-          {% endfor %}
-        {% else %}
-          {% if DISPLAY_CATEGORIES_ON_MENU %}
-            {% for cat, null in categories %}
-              <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+            <nav id="menu"><ul>
+            {% for title, link in MENUITEMS %}
+                <li><a href="{{ link }}">{{ title }}</a></li>
             {% endfor %}
-          {% endif %}
-        {% endif %}
-        </ul></nav><!-- /#menu -->
+            {% if DISPLAY_PAGES_ON_MENU %}
+              {% for p in PAGES %}
+                <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+              {% endfor %}
+            {% else %}
+              {% if DISPLAY_CATEGORIES_ON_MENU %}
+                {% for cat, null in categories %}
+                  <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                {% endfor %}
+              {% endif %}
+            {% endif %}
+            </ul></nav><!-- /#menu -->
 
-        {% block content %}
-        {% endblock %}
+            {% block content %}
+            {% endblock %}
 
+        </div><!-- /container-fluid -->
+        <div class="push"><!--//--></div>
     </div>
-    </div>
 
-    <footer id="contentinfo" class="body">
-        <address id="about" class="vcard body">
-        Proudly powered by <a href="http://getpelican.com/" target="_blank">Pelican</a>.
-        </address><!-- /#about -->
-    </footer><!-- /#contentinfo -->
+    <footer>
+        <div class="container-fluid">
+            <address id="about" class="vcard body">
+            Proudly powered by <a href="http://getpelican.com/" target="_blank">Pelican</a>.
+            </address><!-- /#about -->
+        </div>
+    </footer><!-- /footer -->
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
