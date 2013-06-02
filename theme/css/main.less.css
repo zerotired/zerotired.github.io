@@ -714,7 +714,11 @@ body {
 .styler {
   margin-top: 8px;
   margin-bottom: 8px;
-  min-height: 98.9%;
+  min-height: 400px;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+  background-color: #ffffff;
 }
 div.wrapper > div.top-push {
   height: 45px;
@@ -723,13 +727,10 @@ div.wrapper > div.top-push {
   height: auto !important;
   margin: 0 auto -19px;
   min-height: 100%;
-  background-color: #ffffff;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+  padding-bottom: 10px;
 }
 footer.post-info {
   display: inline-block;
@@ -756,10 +757,12 @@ p.paginator {
 footer#contentinfo {
   height: -19px;
   max-width: 900px;
-  background-color: #ffffff;
+  background-color: #46a546;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 8px;
+  position: relative;
+  margin-top: -35px;
 }
 blockquote {
   -webkit-border-radius: 2px;
