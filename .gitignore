@@ -16,7 +16,5 @@
 *.sublime-workspace
 build/downloads
 build/eggs
-static
-theme
 missing_versions.cfg
 
