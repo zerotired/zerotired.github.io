@@ -11,6 +11,6 @@ Setup
 
 Development
 ...........
+To build english and german version (to `output/`)
 
-./build/bin/pelican -o ./output/en/ -s ./build/src/en_pelicanconf.py
-./build/bin/pelican -o ./output/de/ -s ./build/src/de_pelicanconf.py
+	./build.sh
