@@ -1,6 +1,24 @@
-
-$(document).ready(function() {
+var userLanguage = window.navigator.userLanguage || window.navigator.language;
+function redirectUserWithLanguage(lang) {
+	var path = window.location.pathname;
+	if(path.substr(0, 3)=='/de' || path.substr(0, 3)=='/en') {
+		path = path.substr(3);
+	}
 	
+	if(lang == 'en') {
+		lang = '';
+	} else {
+		lang = '/'+lang;
+	}
+	window.location.href = window.location.origin + lang + path;	
+}
+$(document).ready(function() {
+	if(!window.localStorage.getItem('selectedLanguage')) {
+		var path = window.location.pathname;
+		if(userLanguage.substr(0, 2) == 'de' && path.substr(path.length-3, path.length-2)!='de') {
+			redirectUserWithLanguage('de');	
+		}
+	}
 	// Home slider
 	$("#slider").echoSlider({
 		effect: "slide", // Default effect to use, supports: "slide" or "fade"
@@ -32,13 +50,15 @@ $(document).ready(function() {
 	// Form hints	
 	$("label").inFieldLabels({ fadeOpacity: 0.4 });
 
-	$("nav select").change(function() {
+	/*
+$("nav select").change(function() {
 		if(this.options[this.selectedIndex].value != "#") {
 			var page = this.options[this.selectedIndex].value.split("#")[1];
 	 		FluidNav.goTo(page);
 			$("html,body").animate({ scrollTop:$('#'+page).offset().top }, 700);
 		}
 	});
+*/
 		
 	// Gallery hover
 	$(".screenshot_grid div").each(function() {

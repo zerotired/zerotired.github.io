@@ -105,9 +105,9 @@
 					<li>
 						<div>
 							<form>
-							<select name="URL" onchange="window.location.href=this.form.URL.options[this.form.URL.selectedIndex].value" style="width:50px;margin-top:-4px;">
-							<option selected="selected" value="http://www.inventorum.com/de/">DE</option>
-							<option value="http://www.inventorum.com/en/">EN</option>
+							<select name="URL" onchange="window.localStorage.setItem('selectedLanguage', 1); redirectUserWithLanguage(this.form.URL.options[this.form.URL.selectedIndex].value)" style="width:50px;margin-top:-4px;">
+							<option selected="selected"  value="de">DE</option>
+							<option value="en">EN</option>
 							</select>
 							</form>
 						</div>
