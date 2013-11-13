@@ -1,3 +1,14 @@
+$.expr[':'].external = function (a) {
+        var PATTERN_FOR_EXTERNAL_URLS = /^\w+:\/\//;
+        var href = $(a).attr('href');
+        return href !== undefined && href.search(PATTERN_FOR_EXTERNAL_URLS) !== -1;
+    };
+
+$.expr[':'].internal = function (a) {
+    return $(a).attr('href') !== undefined && !$.expr[':'].external(a);
+};
+
+
 var userLanguage = window.navigator.userLanguage || window.navigator.language;
 function redirectUserWithLanguage(lang) {
 	var path = window.location.pathname;
@@ -12,7 +23,32 @@ function redirectUserWithLanguage(lang) {
 	}
 	window.location.href = window.location.origin + lang + path;	
 }
-$(document).ready(function() {
+function loadPage(page) {
+		$.ajax({
+	  		type: 'get',
+	  		url: window.location.origin+page,
+	  		success: function(res) {
+	  			var currentPage = $('div.page');
+	  			var newPage = $(res).find('div.page');
+	  			$('#pages').append(newPage);
+	  			console.log(currentPage.attr('id')+' - '+newPage.attr('id'));
+	  			pageInit();
+				currentPage.fadeOut(400);
+				newPage.fadeIn(400);
+				$("#pages").animate({ height: newPage.outerHeight() }, 400, function() {
+					currentPage.remove();	
+				}); 
+	  		}
+	  	});
+}
+
+	window.addEventListener("popstate", function(e) {
+	    loadPage(window.location.pathname);
+	});
+var pageInit = function() {
+
+	var currentPage = $('div.page');
+	$('#pages').height(currentPage.outerHeight());
 	if(!window.localStorage.getItem('selectedLanguage')) {
 		var path = window.location.pathname;
 		if(userLanguage.substr(0, 2) == 'de' && path.substr(path.length-3, path.length-2)!='de') {
@@ -161,5 +197,21 @@ $("nav select").change(function() {
   		}
   	});
   });
+	
+}
+
+$(document).ready(function() {
+	$('a:internal').live('click', function(a) {
+		var href = $(this).attr('href');
+		if(href.substr(0, 10)!='javascript' && (href.substr(href.length-4, href.length-1)=='html' || href.substr(href.length-3, href.length-1)=='htm')) {
+			
+		var url = window.location.origin+href;
+		loadPage(href);
+		history.pushState(null, null, url);
+		}
+		return false;	
+	});
+	
+	pageInit();
 	
 });

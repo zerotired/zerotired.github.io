@@ -67,6 +67,8 @@ section #pages {
 	}
 	section #pages div.page { 
 		padding-top: 40px;
+		position: absolute;
+		top: 0px;
 	}
 		section #pages .content_box {
 			padding-top: 15px;
