@@ -1,0 +1,46 @@
+<!-- Start Header -->
+		<div class="container">
+			<!-- Start Social Icons -->
+			<aside>
+				<ul class="social">
+<!-- 					<li class="facebook"><a href="">Facebook</a></li> -->
+					<li class="twitter"><a href="http://twitter.com/inventorum_com" target="_blank">Twitter</a></li>
+					<li class="email"><a href="mailto:info@inventorum.com" title="info@inventorum.com">E-Mail</a></li>
+<!-- 					<li class="rss"><a href="" title="App Updates">RSS</a></li> -->
+					<!-- More Social Icons:
+					<li class="dribbble"><a href="">Dribbble</a></li>
+					<li class="google"><a href="">Google</a></li>
+					<li class="flickr"><a href="">Flickr</a></li>
+					-->
+				</ul>
+				<p style="float:left;font-size:18px;padding-left:10px;padding-top:19px;color:#ec8a2b;text-align:right;line-height:0.8em;">0800 528 35 65<br /><span style="color:#cdcdcd;font-size:12px;">&nbsp;&nbsp;{{ GRATIS_WORD }}</span></p>
+			</aside>
+			<!-- End Social Icons -->
+
+			<!-- Start Navigation -->
+			<nav>
+				<ul>
+					
+					{% for _page in pages %}
+					
+						{% if _page.title != '' and _page.slug != "app-info" and _page.slug != "app-footer" %}
+				        <li{% if output_file == _page.url or ( output_file == 'index.html' and _page.url == 'pages/app-index.html' )  %} class="current"{% endif %}>
+				        	<a href="{{ SITEURL }}/{{ _page.url }}">{{ _page.title|striptags }}</a>
+				        </li>
+				        {% endif %}
+			        {% endfor %}
+					<li>
+						<div>
+							<form>
+							<select name="URL" onchange="window.location.href=this.form.URL.options[this.form.URL.selectedIndex].value" style="width:50px;margin-top:-4px;">
+							<option selected="selected" value="http://www.inventorum.com/de/">DE</option>
+							<option value="http://www.inventorum.com/en/">EN</option>
+							</select>
+							</form>
+						</div>
+					</li>
+				</ul>
+				<span class="arrow"></span>
+			</nav>
+			<!-- End Navigation -->
+		</div>
