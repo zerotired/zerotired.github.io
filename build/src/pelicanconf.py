@@ -6,7 +6,7 @@ import os
 SITEURL = ''
 TIMEZONE = 'Europe/Berlin'
 
-DEFAULT_LANG = u'de'
+DEFAULT_LANG = u'en'
 
 if DEFAULT_LANG == 'de':
 	GRATIS_WORD = u'KOSTENLOSS'

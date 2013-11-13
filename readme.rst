@@ -12,8 +12,5 @@ Setup
 Development
 ...........
 
-Run the local server::
-
-    build/bin/develop_server start
-
-Display the page in your browser at ``http://localhost:8000/``
+./build/bin/pelican -o ./output/en/ -s ./build/src/en_pelicanconf.py
+./build/bin/pelican -o ./output/de/ -s ./build/src/de_pelicanconf.py
