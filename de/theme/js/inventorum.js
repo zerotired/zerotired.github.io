@@ -30,14 +30,15 @@ function loadPage(page) {
 	  		success: function(res) {
 	  			var currentPage = $('div.page');
 	  			var newPage = $(res).find('div.page');
-	  			$('#pages').append(newPage);
-	  			console.log(currentPage.attr('id')+' - '+newPage.attr('id'));
-	  			pageInit();
-				currentPage.fadeOut(400);
-				newPage.fadeIn(400);
-				$("#pages").animate({ height: newPage.outerHeight() }, 400, function() {
-					currentPage.remove();	
-				}); 
+	  			if(currentPage.attr('id')!=newPage.attr('id')) {
+		  			$('#pages').append(newPage);
+		  			pageInit();
+					currentPage.fadeOut(400);
+					newPage.fadeIn(400);
+					$("#pages").animate({ height: newPage.outerHeight() }, 400, function() {
+						currentPage.remove();	
+					}); 
+	  			}
 	  		}
 	  	});
 }
@@ -206,6 +207,8 @@ $(document).ready(function() {
 		if(href.substr(0, 10)!='javascript' && (href.substr(href.length-4, href.length-1)=='html' || href.substr(href.length-3, href.length-1)=='htm')) {
 			
 		var url = window.location.origin+href;
+		$("nav ul li").removeClass("current");
+		$(this).parent().addClass('current');
 		loadPage(href);
 		history.pushState(null, null, url);
 		}
