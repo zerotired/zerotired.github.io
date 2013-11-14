@@ -1,3 +1,9 @@
+===============
+Inventorum Site
+===============
+
+Repository for hosting of www.inventorum.com
+
 Prerequisites
 -------------
 
@@ -11,6 +17,7 @@ Setup
 
 Development
 ...........
-To build english and german version (to `output/`)
+
+To build english and german version (to `output/`)::
 
 	./build.sh
