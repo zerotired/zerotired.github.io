@@ -174,7 +174,8 @@ $("nav select").change(function() {
 	});
 	
 	// Contact form
-	$("div#contact_form form").submit(function(event) {
+	/*
+$("div#contact_form form").submit(function(event) {
 	event.preventDefault(); 
   	var this_form = $(this);
   	$.ajax({
@@ -185,12 +186,12 @@ $("nav select").change(function() {
   			if(res) {
   				this_form.fadeOut("fast");
 					$(".success").fadeIn("fast");
-/* 					FluidNav.resizePage('', true); */
   			} else {
   				$(".validation").fadeIn("fast");  			}
   		}
   	});
   });
+*/
 	
 }
 
