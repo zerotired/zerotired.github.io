@@ -190,23 +190,31 @@
 						<p>Vielen Dank. Wir setzen uns mit Ihnen sobald wie möglich in Verbindung.</p>
 					</div>
 				
-					<form action="javascript:;" method="post">
+				<div id="crmWebToEntityForm" align="center"><meta http-equiv="content-type" content="text/html;charset = UTF-8" />  
+				    <form action="https://crm.zoho.com/crm/WebToContactForm" name="WebToContacts767202000000142003" method="POST" accept-charset="UTF-8">
+				      <input type="text" style="display:none;" name="xnQsjsdp" value="zSu2jx3D5lxthYo@kRl79w$$" />  
+				      <input type="hidden" name="zc_gad" id="zc_gad" value="" />  
+				      <input type="text" style="display:none;" name="xmIwtLD" value="jnR2FHh6yTqno6ZdCbbkDCDPfpWe20lJ" />  
+				      <input type="text" style="display:none;" name="actionType" value="Q29udGFjdHM=" /> 
+				      <input type="text" style="display:none;" name="returnURL" value="http://inventorum.github.io/pages/contact.html" /> 
+				      
+					
 						<div class="row">
 							<p class="left">
 								<label for="title">Anrede *</label>
 <!-- 								<input type="text" name="title" id="title" value="" /> -->
-								<select name="title" id="title" class="text">
-								  <option>Bitte auswählen...</option>
-								  <option>Frau</option>
-								  <option>Herr</option>
-								</select>
+								<select class="text" name="Salutation" id="title">  <option value="-None-">-None-</option> <option value="Herr">Herr</option>  <option value="Frau">Frau</option> </select>
+							</p>
+							<p class="right">
+								<label for="name">Name *</label>
+								<input type="text" maxlength="40" name="First Name" id="name" value="" />
 							</p>
 						</div>
 
 						<div class="row">
 							<p class="left">
-								<label for="name">Name *</label>
-								<input type="text" name="name" id="name" value="" />
+								<label for="last_name">Last Name *</label>
+								<input type="text" maxlength="80" name="Last Name" id="last_name" value="" />
 							</p>
 							<p class="right">
 								<label for="company">Firma *</label>
@@ -217,41 +225,25 @@
 						<div class="row">
 							<p class="left">
 								<label for="email">E-Mail *</label>
-								<input type="text" name="email" id="email" value="" />
+								<input type="text" maxlength="100" name="Email" id="email" value="" />
 							</p>
 							<p class="right">
 								<label for="phone">Telefon</label>
-								<input type="text" name="phone" id="phone" value="" />
+								<input type="text" maxlength="50" name="phone" id="phone" value="" />
 							</p>
 						</div>
 					
-<!--
-						<div class="row">
-							<p class="left">
-								<label for="website">Website</label>
-								<input type="text" name="website" id="website" value="" />
-							</p>
-							<p class="right">
-								<label for="subject">Betreff</label>
-								<input type="text" name="subject" id="subject" value="" />
-							</p>
-						</div>
--->
 					
 						<p>
 							<label for="message" class="textarea">Nachricht *</label>
-							<textarea class="text" name="message" id="message"></textarea>
+							<textarea class="text" name="Description" maxlength="1000" id="message"></textarea>
 						</p>
 					
-						<input type="submit" class="button green" value="Absenden →" style="margin-bottom:20px;" />
+						<input type="submit" class="button green" value="Send now →" style="margin-bottom:20px;" />
 						
-<!--
-						<p style="margin-top:50px;margin-bottom:20px;font-size:10px;">
-							Im Übrigen gelten die Erklärungen des <a href="#">Datenschutzes</a>.
-						</p>
--->
-					</form>
-				
+      <script> var mndFileds=new Array('Last Name');var fldLangVal=new Array('Last Name');function reloadImg(){document.getElementById('imgid').src = document.getElementById('imgid').src;} function checkMandatery(){for(i=0;i<mndFileds.length;i++){ var fieldObj=document.forms['WebToContacts767202000000142003'][mndFileds[i]];if(fieldObj) {if(((fieldObj.value).replace(/^\s+|\s+$/g, '')).length==0){alert(fldLangVal[i] +' cannot be empty'); fieldObj.focus(); return false;}else if(fieldObj.nodeName=='SELECT'){if(fieldObj.options[fieldObj.selectedIndex].value=='-None-'){alert(fldLangVal[i] +' cannot be none'); fieldObj.focus(); return false;}} else if(fieldObj.type =='checkbox' &&  fieldObj.checked == false){	alert('Please accept  '+fldLangVal[i]);	fieldObj.focus();return false;}}}}</script>  
+      
+					</form></div>
 				</div>
 
 								     

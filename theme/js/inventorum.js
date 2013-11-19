@@ -174,27 +174,20 @@ $("nav select").change(function() {
 	});
 	
 	// Contact form
-	$("div#contact_form form").submit(function() {
+	$("div#contact_form form").submit(function(event) {
+	event.preventDefault(); 
   	var this_form = $(this);
   	$.ajax({
   		type: 'post',
   		data: this_form.serialize(),
-  		url: 'send_email.php',
+  		url: 'https://crm.zoho.com/crm/WebToContactForm',
   		success: function(res) {
-  			if(res == "true") {
+  			if(res) {
   				this_form.fadeOut("fast");
 					$(".success").fadeIn("fast");
 /* 					FluidNav.resizePage('', true); */
   			} else {
-  				$(".validation").fadeIn("fast");
-/* 					FluidNav.resizePage('', true); */
-  				this_form.find(".text").removeClass("error");
-  				$.each(res.split(","), function() {
-						if(this.length != 0) {
-  						this_form.find("#"+this).addClass("error");
-						}
-  				});
-  			}
+  				$(".validation").fadeIn("fast");  			}
   		}
   	});
   });
