@@ -35,33 +35,28 @@
 				        <!--</li>-->
 				        <!--{% endif %}-->
 			        <!--{% endfor %}-->
-
-                    <li{% if output_file == '/pages/app-index.html' or output_file == 'index.html' %} class="current"{% endif %}>
+                    <li{% if output_file == 'pages/app-index.html' or output_file == 'index.html' %} class="current"{% endif %}>
                     <a href="{{ SITEURL_LANG }}/index.html">{{ NAVBAR_TITLE_HOME }}</a>
                     </li>
-                    <li{% if output_file == '/pages/features.html' %} class="current"{% endif %}>
+                    <li{% if output_file == 'pages/features.html' %} class="current"{% endif %}>
                     <a href="{{ SITEURL_LANG }}/pages/features.html">{{ NAVBAR_TITLE_FEATURES }}</a>
                     </li>
-                    <li{% if output_file == '/pages/pictures.html' %} class="current"{% endif %}>
+                    <li{% if output_file == 'pages/pictures.html' %} class="current"{% endif %}>
                     <a href="{{ SITEURL_LANG }}/pages/pictures.html">{{ NAVBAR_TITLE_PICTURES }}</a>
                     </li>
-                    <li{% if output_file == '/pages/testimonials.html' %} class="current"{% endif %}>
+                    <li{% if output_file == 'pages/testimonials.html' %} class="current"{% endif %}>
                     <a href="{{ SITEURL_LANG }}/pages/testimonials.html">{{ NAVBAR_TITLE_TESTIMONIALS }}</a>
                     </li>
-                    <li{% if output_file == '/pages/company.html' %} class="current"{% endif %}>
+                    <li{% if output_file == 'pages/company.html' %} class="current"{% endif %}>
                     <a href="{{ SITEURL_LANG }}/pages/company.html">{{ NAVBAR_TITLE_COMPANY }}</a>
                     </li>
-                    <li{% if output_file == '/pages/contact.html' %} class="current"{% endif %}>
+                    <li{% if output_file == 'pages/contact.html' %} class="current"{% endif %}>
                     <a href="{{ SITEURL_LANG }}/pages/contact.html">{{ NAVBAR_TITLE_CONTACT }}</a>
                     </li>
 					<li>
 						<div>
-							<form>
-							<select name="URL" onchange="window.localStorage.setItem('selectedLanguage', 1); redirectUserWithLanguage(this.form.URL.options[this.form.URL.selectedIndex].value)" style="width:50px;margin-top:-4px;">
-							<option{% if DEFAULT_LANG == 'de' %} selected="selected" {% endif %} value="de">DE</option>
-							<option{% if DEFAULT_LANG == 'en' %} selected="selected" {% endif %} value="en">EN</option>
-							</select>
-							</form>
+                            {% if DEFAULT_LANG == 'de' %} <a href="/en" class="langSelection" onclick="window.localStorage.setItem('selectedLanguage', 1); redirectUserWithLanguage('en')"><img src="{{ SITEURL }}/theme/images/uk.png"/></a> {% endif %}
+                            {% if DEFAULT_LANG == 'en' %} <a href="/de" class="langSelection" onclick="window.localStorage.setItem('selectedLanguage', 1); redirectUserWithLanguage('de')"><img src="{{ SITEURL }}/theme/images/germany.png"/></a> {% endif %}
 						</div>
 					</li>
 				</ul>
