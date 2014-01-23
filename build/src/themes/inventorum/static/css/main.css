@@ -33,7 +33,9 @@ body {
 html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
     -webkit-text-size-adjust: none;
 }
-
+.langSelection {
+    margin-right: 1px;
+}
 .container {
 	width: 1000px;
 	margin: 0 auto;
