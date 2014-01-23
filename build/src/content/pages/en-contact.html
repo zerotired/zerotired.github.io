@@ -22,19 +22,21 @@
 					<div class="success">
 						<p>Thank you. We will contact you as soon as possible.</p>
 					</div>
-				 <div id='crmWebToEntityForm' align='center'><META HTTP-EQUIV ='content-type' CONTENT='text/html;charset = UTF-8'/>  
-				    <form action='https://crm.zoho.com/crm/WebToContactForm'  name=WebToContacts767202000000142003 id="WebToContacts767202000000142003" method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatery()' accept-charset='UTF-8'>
-				      <input type='text' style='display:none;' name='xnQsjsdp' value='zSu2jx3D5lxthYo@kRl79w$$'/>  
-				      <input type='hidden' name='zc_gad' id='zc_gad' value=''/>  
-				      <input type='text' style='display:none;' name='xmIwtLD' value='jnR2FHh6yTqno6ZdCbbkDCDPfpWe20lJ'/>  
-				      <input type='text'  style='display:none;' name='actionType' value='Q29udGFjdHM='/> 
-				      <input type='text' style='display:none;' name='returnURL' value='http&#x3a;&#x2f;&#x2f;inventorum.github.io&#x2f;pages&#x2f;contact.html' /> 
+				 <div id='crmWebToEntityForm' align='center'>
+                     <META HTTP-EQUIV ='content-type' CONTENT='text/html;charset = UTF-8'/>
+                     <form action='https://crm.zoho.com/crm/WebToLeadForm' name=WebToLeads767202000000077007 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatery()' accept-charset='UTF-8'>
+
+                         <input type='text' style='display:none;' name='xnQsjsdp' value='zSu2jx3D5lxthYo@kRl79w$$'/>
+                         <input type='hidden' name='zc_gad' id='zc_gad' value=''/>
+                         <input type='text' style='display:none;' name='xmIwtLD' value='jnR2FHh6yTpNIcdiJvow0Qw1vyXgS1pG'/>
+                         <input type='text' style='display:none;' name='actionType' value='TGVhZHM='/>
+                         <input type='text' style='display:none;' name='returnURL' value='http&#x3a;&#x2f;&#x2f;www.inventorum.com&#x2f;pages&#x2f;contact_sent.html'/>
+                         <input style="display: none;" type="text" maxlength="20" name="Lead Source" value="Website Entry" />
 				      
 					
 						<div class="row">
 							<p class="left">
 								<label for="title">Title *</label>
-<!-- 								<input type="text" name="title" id="title" value="" /> -->
 								<select class="text" name='Salutation' id="title" >  <option value='-None-'>Please choose...</option>  <option value='Mr.'>Mr.</option>  <option value='Ms.'>Ms.</option>   </select>
 							</p>
 							<p class="right">
@@ -50,7 +52,7 @@
 							</p>
 							<p class="right">
 								<label for="company">Company *</label>
-								<input type="text" name="company" id="company" value="" />
+                                <input id="company" type='text' maxlength='100' name='Company'/>
 							</p>
 						</div>
 						
@@ -65,33 +67,48 @@
 							</p>
 						</div>
 					
-<!--
-						<div class="row">
-							<p class="left">
-								<label for="website">Website</label>
-								<input type="text" name="website" id="website" value="" />
-							</p>
-							<p class="right">
-								<label for="subject">Betreff</label>
-								<input type="text" name="subject" id="subject" value="" />
-							</p>
-						</div>
--->
-					
 						<p>
 							<label for="message" class="textarea">Message *</label>
-							<textarea class="text" name='Description' maxlength='1000' id="message"></textarea>
+                            <textarea class="text" name='Description' maxlength='1000'  id="message"></textarea>
 						</p>
 					
 						<input type="submit" class="button green" value="Send now &#x2192;" style="margin-bottom:20px;" />
-						
-<!--
-						<p style="margin-top:50px;margin-bottom:20px;font-size:10px;">
-							Im Übrigen gelten die Erklärungen des <a href="#">Datenschutzes</a>.
-						</p>
--->
-      <script> var mndFileds=new Array('Last Name');var fldLangVal=new Array('Last Name');function reloadImg(){document.getElementById('imgid').src = document.getElementById('imgid').src;} function checkMandatery(){for(i=0;i<mndFileds.length;i++){ var fieldObj=document.forms['WebToContacts767202000000142003'][mndFileds[i]];if(fieldObj) {if(((fieldObj.value).replace(/^\s+|\s+$/g, '')).length==0){alert(fldLangVal[i] +' cannot be empty'); fieldObj.focus(); return false;}else if(fieldObj.nodeName=='SELECT'){if(fieldObj.options[fieldObj.selectedIndex].value=='-None-'){alert(fldLangVal[i] +' cannot be none'); fieldObj.focus(); return false;}} else if(fieldObj.type =='checkbox' &&  fieldObj.checked == false){	alert('Please accept  '+fldLangVal[i]);	fieldObj.focus();return false;}}}}</script>  
-      
+
+                        <script>
+                             var mndFileds = new Array('Company', 'Last Name', 'Email', 'Salutation', 'Description');
+                             var fldLangVal = new Array('Firma', 'Nachname', 'E-Mail', 'Telefon', 'Titel');
+                             function reloadImg() {
+                                 if (document.getElementById('imgid').src.indexOf('&d') !== -1) {
+                                     document.getElementById('imgid').src = document.getElementById('imgid').src.substring(0, document.getElementById('imgid').src.indexOf('&d')) + '&d' + new Date().getTime();
+                                 } else {
+                                     document.getElementById('imgid').src = document.getElementById('imgid').src + '&d' + new Date().getTime();
+                                 }
+                             }
+                             function checkMandatery() {
+                                 for (i = 0; i < mndFileds.length; i++) {
+                                     var fieldObj = document.forms['WebToLeads767202000000077007'][mndFileds[i]];
+                                     if (fieldObj) {
+                                         if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length == 0) {
+                                             alert(fldLangVal[i] + ' cannot be empty');
+                                             fieldObj.focus();
+                                             return false;
+                                         } else if (fieldObj.nodeName == 'SELECT') {
+                                             if (fieldObj.options[fieldObj.selectedIndex].value == '-None-') {
+                                                 alert(fldLangVal[i] + ' cannot be none');
+                                                 fieldObj.focus();
+                                                 return false;
+                                             }
+                                         } else if (fieldObj.type == 'checkbox') {
+                                             if (fieldObj.checked == false) {
+                                                 alert('Please accept  ' + fldLangVal[i]);
+                                                 fieldObj.focus();
+                                                 return false;
+                                             }
+                                         }
+                                     }
+                                 }
+                             }
+                         </script>
 					</form></div>
 				
 				</div>
