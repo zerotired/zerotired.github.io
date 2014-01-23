@@ -18,6 +18,6 @@ Setup
 Development
 ...........
 
-To build english and german version (to `output/`)::
+To build english and german version (it will be built in main folder of repo)::
 
 	./build.sh
