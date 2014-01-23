@@ -1,118 +1,16 @@
 <html>
     <head>
         <title>Kontakt</title>
-        <meta name="slug" content="contact" />
+        <meta name="slug" content="contact_sent" />
         <meta name="lang" content="de" />
     </head>
     <body>
-    
-				<h1>So erreichen Sie uns: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight:bold;">030 1207 6655</span></h1>
-<!-- 				<h1>So erreichen Sie uns: <span style="font-weight:bold;">0800-KAUFLOKAL</span></h1> -->
-				
-				<p style="font-size:14px;">Rufen Sie uns an oder schreiben uns eine E-Mail an <a href="mailto:kontakt@inventorum.com">kontakt@inventorum.com</a> und<br />
-				erleben Sie Inventorum live.</p>
-				
-				<div id="contact_form">
-					
-					<div class="validation">
-						<p>Die mit einem * gekennzeichneten Felder sind Pflichtfelder und müssen ausgefüllt werden.</p>
-					</div>
 
-					<div class="success">
-						<p>Vielen Dank. Wir setzen uns mit Ihnen sobald wie möglich in Verbindung.</p>
-					</div>
+    <h1 style="text-align: center;">
+        Vielen Dank. <br />
+        <br />
+            Wir setzen uns mit Ihnen sobald wie möglich in Verbindung.
 
-                    <div id='crmWebToEntityForm' align='center'>
-                        <META HTTP-EQUIV='content-type' CONTENT='text/html;charset = UTF-8'>
-                        <form action='https://crm.zoho.com/crm/WebToLeadForm' name=WebToLeads767202000000077007 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatery()' accept-charset='UTF-8'>
-
-                        <input type='text' style='display:none;' name='xnQsjsdp' value='zSu2jx3D5lxthYo@kRl79w$$'/>
-                        <input type='hidden' name='zc_gad' id='zc_gad' value=''/>
-                        <input type='text' style='display:none;' name='xmIwtLD' value='jnR2FHh6yTpNIcdiJvow0Qw1vyXgS1pG'/>
-                        <input type='text' style='display:none;' name='actionType' value='TGVhZHM='/>
-                        <input type='text' style='display:none;' name='returnURL' value='http&#x3a;&#x2f;&#x2f;www.inventorum.com&#x2f;de&#x2f;pages&#x2f;contact_sent.html'/>
-                        <input style="display: none;" type="text" maxlength="20" name="Lead Source" value="Website Entry" />
-				      
-					
-						<div class="row">
-							<p class="left">
-								<label for="title">Anrede *</label>
-<!-- 								<input type="text" name="title" id="title" value="" /> -->
-								<select class="text" name='Salutation' id="title" >  <option value='-None-'>Bitte auswählen...</option> <option value='Herr'>Herr</option>  <option value='Frau'>Frau</option> </select>
-							</p>
-							<p class="right">
-								<label for="name">Name *</label>
-								<input type="text" maxlength='40' name="First Name" id="name" value="" />
-							</p>
-						</div>
-
-						<div class="row">
-							<p class="left">
-								<label for="last_name">Nachname *</label>
-								<input type="text" maxlength='80' name="Last Name" id="last_name" value="" />
-							</p>
-							<p class="right">
-								<label for="company">Firma *</label>
-                                <input id="company" type='text' maxlength='100' name='Company'/>
-							</p>
-						</div>
-						
-						<div class="row">
-							<p class="left">
-								<label for="email">E-Mail *</label>
-								<input type="text" maxlength='100' name="Email" id="email" value="" />
-							</p>
-							<p class="right">
-								<label for="phone">Telefon</label>
-								<input type="text" maxlength='50' name="Phone" id="phone" value="" />
-							</p>
-						</div>
-					
-					
-						<p>
-							<label for="message" class="textarea">Nachricht *</label>
-							<textarea class="text" name='Description' maxlength='1000'  id="message"></textarea>
-						</p>
-					
-						<input type="submit" class="button green" value="Absenden &#x2192;" style="margin-bottom:20px;" />
-
-                            <script>
-                            var mndFileds = new Array('Company', 'Last Name', 'Email', 'Salutation', 'Description');
-                            var fldLangVal = new Array('Firma', 'Nachname', 'E-Mail', 'Telefon', 'Titel');
-                            function reloadImg() {
-                                if (document.getElementById('imgid').src.indexOf('&d') !== -1) {
-                                    document.getElementById('imgid').src = document.getElementById('imgid').src.substring(0, document.getElementById('imgid').src.indexOf('&d')) + '&d' + new Date().getTime();
-                                } else {
-                                    document.getElementById('imgid').src = document.getElementById('imgid').src + '&d' + new Date().getTime();
-                                }
-                            }
-                            function checkMandatery() {
-                                for (i = 0; i < mndFileds.length; i++) {
-                                    var fieldObj = document.forms['WebToLeads767202000000077007'][mndFileds[i]];
-                                    if (fieldObj) {
-                                        if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length == 0) {
-                                            alert(fldLangVal[i] + ' cannot be empty');
-                                            fieldObj.focus();
-                                            return false;
-                                        } else if (fieldObj.nodeName == 'SELECT') {
-                                            if (fieldObj.options[fieldObj.selectedIndex].value == '-None-') {
-                                                alert(fldLangVal[i] + ' cannot be none');
-                                                fieldObj.focus();
-                                                return false;
-                                            }
-                                        } else if (fieldObj.type == 'checkbox') {
-                                            if (fieldObj.checked == false) {
-                                                alert('Please accept  ' + fldLangVal[i]);
-                                                fieldObj.focus();
-                                                return false;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            </script>
-					</form></div>
-				</div>
-
-								     </body>
+    </h1>
+    </body>
 </html>
