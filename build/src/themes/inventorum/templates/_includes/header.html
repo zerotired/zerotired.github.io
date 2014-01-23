@@ -55,8 +55,8 @@
                     </li>
 					<li>
 						<div>
-                            {% if DEFAULT_LANG == 'de' %} <a href="/en" class="langSelection" onclick="window.localStorage.setItem('selectedLanguage', 1); redirectUserWithLanguage('en')"><img src="{{ SITEURL }}/theme/images/uk.png"/></a> {% endif %}
-                            {% if DEFAULT_LANG == 'en' %} <a href="/de" class="langSelection" onclick="window.localStorage.setItem('selectedLanguage', 1); redirectUserWithLanguage('de')"><img src="{{ SITEURL }}/theme/images/germany.png"/></a> {% endif %}
+                            {% if DEFAULT_LANG == 'de' %} <a href="/en" class="langSelection" onclick="window.localStorage.setItem('selectedLanguage', 1); redirectUserWithLanguage('en')"><img src="{{ SITEURL }}/theme/images/germany.png"/></a> {% endif %}
+                            {% if DEFAULT_LANG == 'en' %} <a href="/de" class="langSelection" onclick="window.localStorage.setItem('selectedLanguage', 1); redirectUserWithLanguage('de')"><img src="{{ SITEURL }}/theme/images/uk.png"/></a> {% endif %}
 						</div>
 					</li>
 				</ul>
