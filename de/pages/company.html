@@ -105,6 +105,13 @@
 					<!---->
 						<!---->
 				        <!--<li>-->
+				        	<!--<a href="/pages/contact_sent.html">Kontakt</a>-->
+				        <!--</li>-->
+				        <!---->
+			        <!---->
+					<!---->
+						<!---->
+				        <!--<li>-->
 				        	<!--<a href="/pages/features.html">Funktionen</a>-->
 				        <!--</li>-->
 				        <!---->
@@ -135,7 +142,6 @@
 				        <!--</li>-->
 				        <!---->
 			        <!---->
-
                     <li>
                     <a href="/de/index.html">Start</a>
                     </li>
@@ -148,7 +154,7 @@
                     <li>
                     <a href="/de/pages/testimonials.html">Kundenmeinungen</a>
                     </li>
-                    <li>
+                    <li class="current">
                     <a href="/de/pages/company.html">Unternehmen</a>
                     </li>
                     <li>
@@ -156,13 +162,7 @@
                     </li>
 					<li>
 						<div>
-							<form>
-							<select name="URL" onchange="window.localStorage.setItem('selectedLanguage', 1); redirectUserWithLanguage(this.form.URL.options[this.form.URL.selectedIndex].value)" style="width:50px;margin-top:-4px;">
-							<option selected="selected"  value="de">DE</option>
-							<option value="en">EN</option>
-							</select>
-							</form>
-						</div>
+ <a href="/en" class="langSelection" onclick="window.localStorage.setItem('selectedLanguage', 1); redirectUserWithLanguage('en')"><img src="/theme/images/uk.png"/></a> 						</div>
 					</li>
 				</ul>
 				<span class="arrow"></span>

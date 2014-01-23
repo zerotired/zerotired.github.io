@@ -33,7 +33,9 @@ body {
 html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
     -webkit-text-size-adjust: none;
 }
-
+.langSelection {
+    margin-right: 1px;
+}
 .container {
 	width: 1000px;
 	margin: 0 auto;
@@ -41,6 +43,7 @@ html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
 section #pages {
 	float: right;
 	width: 525px;
+    min-height: 590px;
 /* 	background: white url('../images/light-page_shadow.png') repeat-y top left; */
 	background: white;
 	padding: 0px 20px 0px 20px;
@@ -688,14 +691,13 @@ div#contact_form {
 div#contact_form .error {
 	border-color: #E01C46;
 }
-div#contact_form .validation,
-div#contact_form .success {
-	display: none;
+.validation,
+.success {
 	font-size: 12px;
 	margin-bottom: 20px;
 }
-	div#contact_form .validation p  { color: #e01c46; }
-	div#contact_form .success p	    { color: #65cf82; }
+	.validation p  { color: #e01c46; }
+	.success p	    { color: #65cf82; }
 	
 
 	div#contact_form select {
