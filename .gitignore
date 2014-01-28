@@ -1,10 +1,11 @@
-/build/.installed.cfg
-/build/bin
-/build/parts
-/build/var/*
-/build/etc
-/build/node_modules
+/.installed.cfg
+/bin
+/parts
+/var/*
+/etc
+/node_modules
 /.idea
+/eggs
 
 *.swp
 *.py[co]
@@ -14,3 +15,8 @@
 .DS_Store
 *.sublime-project
 *.sublime-workspace
+build/downloads
+build/eggs
+missing_versions.cfg
+
+/build/*

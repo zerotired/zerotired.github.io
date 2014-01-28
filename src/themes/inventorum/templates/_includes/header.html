@@ -1,0 +1,66 @@
+<!-- Start Header -->
+		<div class="container">
+			<!-- Start Social Icons -->
+			<aside>
+                <ul class="social">
+                    <li class="facebook"><a href="https://www.facebook.com/inventorum">Facebook</a></li>
+                    <li class="twitter"><a href="http://twitter.com/inventorum_com" target="_blank">Twitter</a></li>
+                    <li class="flickr"><a href="http://inventorum.blogspot.de" target="_blank">Blog</a></li>
+                    <li class="email"><a href="mailto:info@inventorum.com" title="info@inventorum.com">NAVBAR_SOCIAL_EMAIL</a></li>
+                    <!-- 					<li class="rss"><a href="" title="App Updates">RSS</a></li> -->
+                    <!-- More Social Icons:
+                    <li class="dribbble"><a href="">Dribbble</a></li>
+                    <li class="google"><a href="">Google</a></li>
+                    <li class="flickr"><a href="">Flickr</a></li>
+                    -->
+                </ul>
+                {% if DEFAULT_LANG == 'en' %}
+                <p style="float:left;font-size:18px;padding-left:10px;padding-top:21px;color:#ec8a2b;">+49 (0) 30 12 07 66 55</p>
+                {% endif %}
+                {% if DEFAULT_LANG == 'de' %}
+                <p style="float:left;font-size:18px;padding-left:10px;padding-top:19px;color:#ec8a2b;text-align:right;line-height:0.8em;">0800 528 35 65<br /><span style="color:#cdcdcd;font-size:10px;">&nbsp;&nbsp;KOSTENLOS DT. FESTNETZ</span></p>
+                {% endif %}
+			</aside>
+			<!-- End Social Icons -->
+
+			<!-- Start Navigation -->
+			<nav>
+				<ul>
+					
+					<!--{% for _page in pages %}-->
+					<!---->
+						<!--{% if _page.title != '' and _page.slug != "app-info" and _page.slug != "app-footer" %}-->
+				        <!--<li{% if output_file == _page.url or ( output_file == 'index.html' and _page.url == 'pages/app-index.html' )  %} class="current"{% endif %}>-->
+				        	<!--<a href="{{ SITEURL }}/{{ _page.url }}">{{ _page.title|striptags }}</a>-->
+				        <!--</li>-->
+				        <!--{% endif %}-->
+			        <!--{% endfor %}-->
+                    <li{% if output_file == 'pages/app-index.html' or output_file == 'index.html' %} class="current"{% endif %}>
+                    <a href="{{ SITEURL_LANG }}/index.html">{{ NAVBAR_TITLE_HOME }}</a>
+                    </li>
+                    <li{% if output_file == 'pages/features.html' %} class="current"{% endif %}>
+                    <a href="{{ SITEURL_LANG }}/pages/features.html">{{ NAVBAR_TITLE_FEATURES }}</a>
+                    </li>
+                    <li{% if output_file == 'pages/pictures.html' %} class="current"{% endif %}>
+                    <a href="{{ SITEURL_LANG }}/pages/pictures.html">{{ NAVBAR_TITLE_PICTURES }}</a>
+                    </li>
+                    <li{% if output_file == 'pages/testimonials.html' %} class="current"{% endif %}>
+                    <a href="{{ SITEURL_LANG }}/pages/testimonials.html">{{ NAVBAR_TITLE_TESTIMONIALS }}</a>
+                    </li>
+                    <li{% if output_file == 'pages/company.html' %} class="current"{% endif %}>
+                    <a href="{{ SITEURL_LANG }}/pages/company.html">{{ NAVBAR_TITLE_COMPANY }}</a>
+                    </li>
+                    <li{% if output_file == 'pages/contact.html' %} class="current"{% endif %}>
+                    <a href="{{ SITEURL_LANG }}/pages/contact.html">{{ NAVBAR_TITLE_CONTACT }}</a>
+                    </li>
+					<li>
+						<div>
+                            {% if DEFAULT_LANG == 'de' %} <a href="/en" class="langSelection" onclick="window.localStorage.setItem('selectedLanguage', 1); redirectUserWithLanguage('en')"><img src="{{ SITEURL }}/theme/images/uk.png"/></a> {% endif %}
+                            {% if DEFAULT_LANG == 'en' %} <a href="/de" class="langSelection" onclick="window.localStorage.setItem('selectedLanguage', 1); redirectUserWithLanguage('de')"><img src="{{ SITEURL }}/theme/images/germany.png"/></a> {% endif %}
+						</div>
+					</li>
+				</ul>
+				<span class="arrow"></span>
+			</nav>
+			<!-- End Navigation -->
+		</div>

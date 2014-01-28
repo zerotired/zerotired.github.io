@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ SITENAME }} - {{ article.title|striptags }}{% endblock %}
+{% block content %}
+<div>
+  <article class="hentry" role="article">
+    {% include '_includes/article.html' %}
+    <footer>
+      {% include '_includes/article_infos.html' %}
+    </footer>
+  </article>
+</div>
+{% endblock %}

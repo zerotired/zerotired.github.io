@@ -1,0 +1,21 @@
+
+		
+			<!-- Start Logo -->
+			<a href="/" class="logo">
+				<img src="{{ SITEURL }}/theme/images/light-logo2.png" alt="Inventorum" style="height:132px !important;" />
+			</a>
+			
+					{% for page in pages %}
+						{% if page.slug == "app-info" %}
+						{{ page.content }}
+						{% endif %}
+					{% endfor %}
+			<!-- End Logo -->
+<!-- 			<span class="tagline" style="text-align:center;background:none;">Wir l(i)eben Einzelhandel.</span> -->
+						
+			<!-- Alignments options: right_align, left_align, centered -->
+<!--
+			<div class="price centered">
+				<p>Aktion: Danach für nur XX € pro Monat<sup>*</sup>. Nur für kurze Zeit.</p>
+			</div>
+-->
