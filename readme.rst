@@ -10,14 +10,11 @@ Prerequisites
 Setup
 .....
 ::
-
-    cd build
     python bootstrap.py
     bin/buildout -vvN
 
 Development
 ...........
 
-To build english and german version (it will be built in main folder of repo)::
-
+To build english and german version (it will be built to 'build/')::
 	./build.sh

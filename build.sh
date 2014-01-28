@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-./build/bin/pelican -o ./ -s ./build/src/en_pelicanconf.py ./build/src/content/
-./build/bin/pelican -o ./de/ -s ./build/src/de_pelicanconf.py ./build/src/content/
+./bin/pelican -o ./build/ -s ./build/src/en_pelicanconf.py ./src/content/
+./bin/pelican -o ./build/de/ -s ./build/src/de_pelicanconf.py ./src/content/

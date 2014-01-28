@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+{% set index=True %}
+{% for page in pages %}
+	{% if page.slug == "app-index" %}
+		{{ page.content }}
+		<div class="clear"></div>
+	{% endif %}
+{% endfor %}
+{% endblock %}
