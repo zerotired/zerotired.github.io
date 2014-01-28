@@ -7,6 +7,11 @@ $.expr[':'].external = function (a) {
 $.expr[':'].internal = function (a) {
     return $(a).attr('href') !== undefined && !$.expr[':'].external(a);
 };
+$(document).ready(function() {
+    var bgUrl = '/theme/images/polly.jpg';
+    $.backstretch(bgUrl);
+});
+
 
 
 var userLanguage = window.navigator.userLanguage || window.navigator.language;
@@ -15,13 +20,13 @@ function redirectUserWithLanguage(lang) {
 	if(path.substr(0, 3)=='/de' || path.substr(0, 3)=='/en') {
 		path = path.substr(3);
 	}
-	
+
 	if(lang == 'en') {
 		lang = '';
 	} else {
 		lang = '/'+lang;
 	}
-	window.location.href = window.location.origin + lang + path;	
+	window.location.href = window.location.origin + lang + path;
 }
 var resizePage = function(size, animate, callback) {
     if(size) { var new_size = size+40; } else { var new_size = $(".page").height()+40; }
@@ -46,8 +51,8 @@ function loadPage(page) {
 					currentPage.fadeOut(400);
 					newPage.fadeIn(400);
 					$("#pages").animate({ height: newPage.outerHeight() }, 400, function() {
-						currentPage.remove();	
-					}); 
+						currentPage.remove();
+					});
 	  			}
 	  		}
 	  	});
@@ -62,7 +67,7 @@ var pageInit = function() {
 	if(!window.localStorage.getItem('selectedLanguage')) {
 		var path = window.location.pathname;
 		if(userLanguage.substr(0, 2) == 'de' && path.substr(path.length-3, path.length-2)!='de') {
-			redirectUserWithLanguage('de');	
+			redirectUserWithLanguage('de');
 		}
 	}
 	// Home slider
@@ -70,13 +75,13 @@ var pageInit = function() {
 		effect: "slide", // Default effect to use, supports: "slide" or "fade"
 		easing: true, // Easing effect for animations
 		pauseTime: 4000, // How long each slide will appear
-		animSpeed: 500, // Speed of slide animation 
+		animSpeed: 500, // Speed of slide animation
 		manualAdvance: false, // Force manual transitions
 		pauseOnHover: true, // Pause on mouse hover
 		controlNav: true, // Show slider navigation
 		swipeNav: true // Enable touch gestures to control slider
 	});
-	
+
 	// Drop down menus
 	$("header nav ul li").hover(function() {
 		if($(this).find("ul").size != 0) {
@@ -85,15 +90,15 @@ var pageInit = function() {
 	}, function() {
 		$(this).find("ul:first").stop(true, true).fadeOut("fast");
 	});
-	
+
 	$("header nav ul li").each(function() {
 		$("ul li:last a", this).css({ 'border' : 'none' });
 	});
-	
+
 	// Enable mobile drop down navigation
 	$("header nav ul:first").mobileMenu();
-	
-	// Form hints	
+
+	// Form hints
 	$("label").inFieldLabels({ fadeOpacity: 0.4 });
 
 	/*
@@ -105,18 +110,18 @@ $("nav select").change(function() {
 		}
 	});
 */
-		
+
 	// Gallery hover
 	$(".screenshot_grid div").each(function() {
 		$("a", this).append('<span class="hover"></span>');
 	});
-	
+
 	$(".screenshot_grid div").hover(function() {
 		$("a", this).find(".hover").stop(true, true).fadeIn(400);
 	}, function() {
 		$("a", this).find(".hover").stop(true, true).fadeOut(400);
 	});
-	
+
 	$("a.fancybox").fancybox({
 		"transitionIn":			"elastic",
 		"transitionOut":		"elastic",
@@ -129,7 +134,7 @@ $("nav select").change(function() {
 		"hideOnContentClick":	false,
 		"overlayShow":        false
 	});
-		
+
 	// Custom jQuery Tabs
 	$(".tabs").find(".pane:first").show().end().find("ul.nav li:first").addClass("current");
 	$(".tabs ul.nav li a").click(function() {
@@ -138,8 +143,8 @@ $("nav select").change(function() {
 		$(this).parent().addClass("current");
 		$(".pane", tab_container).hide();
 		$("#"+$(this).attr("class")+".pane", tab_container).show();
-	});	
-		
+	});
+
 	// Toggle lists
 	$(".toggle_list ul li .title").click(function() {
 		var content_container = $(this).parent().find(".content");
@@ -155,17 +160,17 @@ $("nav select").change(function() {
 			$(this).find("a.toggle_link").text($(this).find("a.toggle_link").data("close_text"));
 		}
 	});
-	
+
 	$(".toggle_list ul li .title").each(function() {
 		$(this).find("a.toggle_link").text($(this).find("a.toggle_link").data("open_text"));
 		if($(this).parent().hasClass("opened")) {
 			$(this).parent().find(".content").show();
 		}
 	});
-		
+
 	// Tooltips
 	$("a[rel=tipsy]").tipsy({fade: true, gravity: 's', offset: 5, html: true});
-	
+
 	$("ul.social li a").each(function() {
 		if($(this).attr("title")) {
 			var title_text = $(this).attr("title");
@@ -173,19 +178,19 @@ $("nav select").change(function() {
 			var title_text = $(this).text();
 		}
 		$(this).tipsy({
-				fade: true, 
-				gravity: 'n', 
+				fade: true,
+				gravity: 'n',
 				offset: 5,
 				title: function() {
 					return title_text;
 				}
 		});
 	});
-	
+
 	// Contact form
 	/*
 $("div#contact_form form").submit(function(event) {
-	event.preventDefault(); 
+	event.preventDefault();
   	var this_form = $(this);
   	$.ajax({
   		type: 'post',
@@ -208,16 +213,16 @@ $(document).ready(function() {
 	$('a:internal').live('click', function(a) {
 		var href = $(this).attr('href');
 		if(href.substr(0, 10)!='javascript' && (href.substr(href.length-4, href.length-1)=='html' || href.substr(href.length-3, href.length-1)=='htm')) {
-			
+
 		var url = window.location.origin+href;
 		$("nav ul li").removeClass("current");
 		$(this).parent().addClass('current');
 		loadPage(href);
 		history.pushState(null, null, url);
 		}
-		return false;	
+		return false;
 	});
-	
+
 	pageInit();
-	
+
 });

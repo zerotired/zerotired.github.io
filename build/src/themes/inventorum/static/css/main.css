@@ -21,9 +21,11 @@
 /*--------------------------------------------
 1. Global
 ---------------------------------------------*/
-html {   background: url(../images/polly.jpg) no-repeat center center fixed;   -webkit-background-size: cover;   -moz-background-size: cover;   -o-background-size: cover;   background-size: cover; }
+html {
+}
 body {
-	font-size: 13px;
+
+    font-size: 13px;
 	font-family: "Helvetica Neue", helvetica, sans-serif;
 /* 	background: #656d78; */
 	text-rendering: optimizeLegibility;
