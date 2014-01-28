@@ -1,19 +1,20 @@
+===============
+Inventorum Site
+===============
+
+Repository for hosting of www.inventorum.com
+
 Prerequisites
 -------------
 
 Setup
 .....
 ::
-
-    cd build
     python bootstrap.py
     bin/buildout -vvN
 
 Development
 ...........
 
-Run the local server::
-
-    build/bin/develop_server start
-
-Display the page in your browser at ``http://localhost:8000/``
+To build english and german version (it will be built to 'build/')::
+	./build.sh
